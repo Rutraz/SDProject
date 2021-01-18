@@ -16,7 +16,7 @@ const [posts, setPosts] = useState({
 
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:3000/posts/', data )
+        axios.post('http://localhost:8080/posts/', data )
         .then(res =>{
             console.log(res)
         })

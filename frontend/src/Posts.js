@@ -7,7 +7,7 @@ function Posts() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/posts/")
+        fetch("http://localhost:8080/posts/")
           .then(res => res.json())
           .then(
             (result) => {

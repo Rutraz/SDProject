@@ -1,7 +1,7 @@
 import './css/App.css';
 import Posts from './Posts';
 import SendPosts from './SendPosts';
-import axios from 'axios';
+
 
 function App() {
   return (

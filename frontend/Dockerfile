@@ -3,7 +3,8 @@ FROM node:13.12.0-alpine
 # Create app directory
 WORKDIR /frontend
 
-ENV PATH /app/node_modules/.bin:$PATH
+
+ENV PATH /frontend/node_modules/.bin:$PATH
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -21,5 +22,5 @@ RUN npm install react-scripts@3.4.1 -g --silent
 # Bundle app source
 COPY . .
 
-EXPOSE 3006
+
 CMD [ "npm", "start" ]

@@ -14,7 +14,7 @@ services:
     ports:
       - 8080:3000
     volumes:
-      - ./NodeServer/app
+      - ./app
     command: npm start
 
   ##########################
@@ -22,13 +22,11 @@ services:
   #########################
   client:
     build: ./frontend
-    expose:
-      - 3006
+    stdin_open: true
     environment:
-      API_HOST: localhost
-      APP_SERVER_PORT: 9000
+      PORT: 3006
     ports:
-      - 9000:3006
+      - 3006:3006
     volumes:
-      - ./frontend/scr/index.js
+      - "./:/src"
     command: npm start
