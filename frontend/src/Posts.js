@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './css/Posts.css';
+require('dotenv/config');
 
 function Posts() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [posts, setPosts] = useState([]);
 
+   
     useEffect(() => {
-        fetch("http://localhost:8080/posts/")
+        fetch("http://localhost:"+ process.env.REACT_APP_API_PORT +"/posts/")
           .then(res => res.json())
           .then(
             (result) => {

@@ -2,6 +2,7 @@ import react from 'react';
 import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+require('dotenv/config');
 
 function SendPosts() {
 
@@ -16,7 +17,7 @@ const [posts, setPosts] = useState({
 
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:8080/posts/', data )
+        axios.post('http://localhost:'+ process.env.REACT_APP_API_PORT +'/posts/', data )
         .then(res =>{
             console.log(res)
         })
