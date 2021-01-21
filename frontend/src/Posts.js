@@ -28,15 +28,20 @@ function Posts() {
             return <div>Loading...</div>;
           } else {
   return (
-    <div>
-       <ul>
-      {posts.map(post => (
-        <li key={post.id}>
-        {post.title} {post.description}
-        </li>
-    ))}
-  </ul>
+    <div className={"teste"}>
+      <ul>
+            {posts.map(post => (
+              <li key={post.id}>
+              {post.title} | {post.description}
+              </li>
+          ))}
+        </ul>
+
+
     </div>
+    
+      
+
    
   );
 }

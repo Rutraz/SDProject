@@ -7,12 +7,12 @@ services:
   server:
     build: ./NodeServer
     expose:
-      - 3000
+      - 80
     environment:
-      API_HOST: "http://localhost:3000/"
+      API_HOST: "http://localhost:80/"
       APP_SERVER_PORT: 8080
     ports:
-      - 8080:3000
+      - 8080:80
     volumes:
       - ./app
     command: npm start
@@ -24,9 +24,9 @@ services:
     build: ./frontend
     stdin_open: true
     environment:
-      PORT: 3006
+      PORT: 3000
     ports:
-      - 3006:3006
+      - 3000:3000
     volumes:
       - "./:/src"
     command: npm start

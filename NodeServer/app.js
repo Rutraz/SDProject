@@ -24,7 +24,7 @@ app.get('/', (req,res) =>{
 
 //CONNECT TO DB
 mongoose.connect(
-    process.env.DB_CONNECTION,
+    'mongodb+srv://rutra:12qwaszx34@cluster0.yv0dq.mongodb.net/teste123?retryWrites=true&w=majority',
     {useUnifiedTopology: true ,
     useNewUrlParser: true },
     () => console.log('Connected DB!')
@@ -32,4 +32,4 @@ mongoose.connect(
 
 
 //listenning to the server
-app.listen(3000);
+app.listen(80, '0.0.0.0');

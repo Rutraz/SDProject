@@ -24,6 +24,7 @@ const [posts, setPosts] = useState({
         .catch(err => {
             console.log(err)
         })
+    window.location.reload()
     }
 
 

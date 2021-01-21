@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: hello1
+      tier: frontend
+      track: stable
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: hello1
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        - name: hello1
+          image: rutra/frontend:v1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3006
+          lifecycle:
+            preStop:
+              exec:
+                command: ["npm start"]
